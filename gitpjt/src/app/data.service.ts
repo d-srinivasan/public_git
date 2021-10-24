@@ -5,11 +5,11 @@ import { HttpClient } from '@angular/common/http';
   providedIn: 'root'
 })
 export class DataService {
-
-  private REST_API_SERVER = "http://localhost:3000/products";
+ 
   constructor(private httpClient: HttpClient) { }
 
-  public sendGetRequest(){
-    return this.httpClient.get(this.REST_API_SERVER)
+  public sendGetRequest(get_data:string){
+    const SERVER = `https://api.github.com/repos/${get_data}/${get_data}/stats/contributors`;
+    return this.httpClient.get<DataService>(SERVER)
   }
 }
