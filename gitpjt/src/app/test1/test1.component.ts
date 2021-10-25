@@ -14,13 +14,7 @@ export class Test1Component implements OnInit {
   ngOnInit() {
     var tas:any
     this.dataService.sendGetRequest(this.data1).subscribe((data:any=[])=>{
-      var yy=(data.flat(2)).map((a:any)=>a.weeks  )
-      yy.filter(function(a:any,b:any){
-        a.filter(function(n:any,m:any){
-          tas+=n.c
-        })
-      })
-      console.log(tas)
+      console.log(data)
       this.products = data;
     })
   }
