@@ -1,3 +1,25 @@
-<!-- <ul *ngFor="let Product of products">
-    <li>{{Product}}</li>
-</ul> -->
+<script src="https://canvasjs.com/assets/script/canvasjs.min.js"></script>
+<div class="container">
+    <h2>Global Search</h2>
+    <div class="form">
+        <div class="form-group">
+            <label for="">Search Repositories</label>
+            <input type="text" (change)="change_comit($event)" name="" id="" class="form-control" placeholder="" aria-describedby="helpId">
+        </div>
+        <div class="form-group">
+            <span>Number of commits - <b>{{commit_search}}</b></span>
+        </div>
+        <br>
+        <h2>Group by Years</h2>
+        <div class="form-group">
+            <label for="">Select Year</label>
+            <select (change)="selected()" [(ngModel)]="selectedValue" class="form-control" name="" id="">
+            <option *ngFor="let optionss of year_array">{{optionss}}</option>
+          </select>
+        </div>
+        <div class="form-group">
+            <span>Number of commits -<b>{{commit_year}}</b></span>
+        </div>
+        <h2></h2>
+    </div>
+</div>
